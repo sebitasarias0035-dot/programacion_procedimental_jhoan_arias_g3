@@ -10,34 +10,34 @@
     />
 </head>
 <body>
-    
+    <form id="formulariopedidos">
     <h1 style="height: 30px;">FORMULARIO DE PRODUCTO</h1>
 
     <div class="box">
         <div class="field">
   <label class="label">nombre de usuario</label>
   <div class="control">
-    <input class="input" type="text" placeholder="Tangamandapio">
+    <input class="input" type="text" placeholder="Tangamandapio" id="nombre">
   </div>
   <p class="help"></p>
 </div>
 <div class="field">
   <label class="label">producto</label>
   <div class="control">
-    <input class="input" type="text" placeholder="escriba bien el nombre">
+    <input class="input" type="text" placeholder="escriba bien el nombre" id="producto">
   </div>
 </div>
 <div class="field">
   <label class="label">cantidad</label>
   <div class="control">
-    <input class="input" type="number" placeholder="ponga los numeritos bien">
+    <input class="input" type="number" placeholder="ponga los numeritos bien" id="canti">
   </div>
 </div>
 <div class="field">
   <label class="label">metodo de pago</label>
   <div class="control">
     <div class="select">
-      <select>
+      <select id="pago">
         <option>seleccionelo</option>
         <option>visa</option>
         <option>daviplata</option>
@@ -58,24 +58,27 @@
           </a>
         </p>
         <p class="control is-expanded">
-          <input class="input" type="tel" placeholder="su phone numero">
+          <input class="input" type="tel" placeholder="su phone numero" id="num">
         </p>
       </div>
     </div>
   </div>
 </div>
 <div class="field is-grouped">
-  <div class="control">
-    <a href="index.html"><button class="button is-link">enviar</button>
-  </div>
-  <div class="control">
-    <button class="button is-link is-light">Cancelar</button></a>
-  </div>
-</div>
+      <div class="control">
+         <button type="submit" class="button is-link">Enviar</button>
+      </div>
+      <div class="control">
+        <button type="reset" class="button is-link is-light">Cancelar</button>
+      </div>
+    </div>
+  </form>
 </div>
 <div class="control">
   <a href="index.html"><button class="button is-primary">volver</button></a>
 </div>
+<script src="./js/pedidos.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 </body>
 </html>

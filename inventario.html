@@ -10,36 +10,45 @@
     <title>Document</title>
 </head>
 <body>
+  <form id="formularioinventario">
     <div class="field">
   <label class="label">nombre_producto</label>
   <div class="control">
-    <input class="input" type="text" placeholder="Text input">
+    <input class="input" type="text" placeholder="Text input" id="nombre_producto" required>
   </div>
   <p class="help"></p>
 </div><div class="field">
   <label class="label">marca_producto</label>
   <div class="control">
-    <input class="input" type="text" placeholder="Text input">
+    <input class="input" type="text" placeholder="Text input" id="marca_producto" required>
   </div>
   <p class="help"></p>
 </div><div class="field">
   <label class="label">codigo_producto</label>
   <div class="control">
-    <input class="input" type="text" placeholder="Text input">
+    <input class="input" type="text" placeholder="Text input" id="codigo_producto" required>
   </div>
   <p class="help"></p>
 </div><div class="field">
   <label class="label">cantidad_producto</label>
   <div class="control">
-    <input class="input" type="text" placeholder="Text input">
+    <input class="input" type="text" placeholder="Text input" id="cantidad_producto" required>
   </div>
   <p class="help"></p>
 </div>
-<div class="control">
-   <a href="index.html"><button class="button is-primary">enviar</button></a>  
-</div>
+<div class="field is-grouped">
+      <div class="control">
+         <button type="submit" class="button is-link">Enviar</button>
+      </div>
+      <div class="control">
+        <button type="reset" class="button is-link is-light">Cancelar</button>
+      </div>
+    </div>
+  </form>
 <div class="control">
   <a href="index.html"><button class="button is-primary">volver</button></a>
 </div>
+<script src="./js/inventario.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 </html>
