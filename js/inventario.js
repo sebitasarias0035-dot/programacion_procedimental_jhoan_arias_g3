@@ -13,32 +13,52 @@ ValidarDatos(nombre_producto, marca_producto, codigo_producto, cantidad_producto
 
 function ValidarDatos( nombre_producto, marca_producto, codigo_producto, cantidad_producto) {
     let hayErrores = false;
-    // Validación de campos vacíos
     if (nombre_producto == '' || marca_producto == '' || codigo_producto == '' || cantidad_producto == '') {
         console.log("Los campos estan vacios");
+        Swal.fire({
+  title: "campos vacios",
+  icon: "error",
+  draggable: true
+});
         hayErrores = true;
     } else {
-        // Validación del formato de Nombre (solo letras)
         if (!/^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$/.test(nombre_producto)) {
             console.log('el nombre es incorrecto');
+            Swal.fire({
+  title: "nombre del producto invalido",
+  icon: "error",
+  draggable: true
+});
             hayErrores = true;
         }
         
-        // Validación del formato de Apellido (solo letras)
         if (!/^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$/.test(marca_producto)) {
             console.log('la marca no es valida');
+            Swal.fire({
+  title: "marca invalida",
+  icon: "error",
+  draggable: true
+});
             hayErrores = true;
         }
         
-        // Validación de longitud del documento
         if (/^\D+$/.test(codigo_producto)) {
             console.log("el codigo es incorrecto");
+            Swal.fire({
+  title: "codigo incorrecto",
+  icon: "error",
+  draggable: true
+});
             hayErrores = true;
         }
 
-        // Validación de longitud del teléfono
         if (/^\D+$/.test(cantidad_producto)) {
             console.log("la cantidad es incorrecta");
+            Swal.fire({
+  title: "cantidad invalida",
+  icon: "error",
+  draggable: true
+});
             hayErrores = true;
         }
     }
@@ -54,14 +74,6 @@ function ValidarDatos( nombre_producto, marca_producto, codigo_producto, cantida
 }, 2000);
          
     }
-     if (hayErrores) {
-        console.log("datos incorrectos.");
-        Swal.fire({
-  title: "tequivocaste",
-  icon: "error",
-  draggable: true
-});
-       
-    }
+     
 
 }

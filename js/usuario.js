@@ -26,29 +26,49 @@ function ValidarDatos(Nombre, Apellido, telefono, correo) {
     // Validación de campos vacíos
     if (Nombre === '' || Apellido === '' || telefono === '' || correo === '') {
         console.log("Error: Los campos obligatorios están vacíos");
+        Swal.fire({
+  title: "rellena los campos",
+  icon: "error",
+  draggable: true
+});
         hayErrores = true;
     } else {
-        // Validación del formato de Nombre (solo letras)
+
         if (!/^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$/.test(Nombre)) {
             console.log('Error: El formato del nombre es incorrecto');
+            Swal.fire({
+  title: "nombre invalido",
+  icon: "error",
+  draggable: true
+});
             hayErrores = true;
         }
-        
-        // Validación del formato de Apellido (solo letras)
+
         if (!/^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$/.test(Apellido)) {
             console.log('Error: El formato del apellido es incorrecto');
+            Swal.fire({
+  title: "apellido invalido",
+  icon: "error",
+  draggable: true
+});
             hayErrores = true;
         }
         
-        // Validación de longitud del teléfono (Ajustado para que sea un error si no tiene al menos 10 dígitos)
         if (telefono.length < 10) {
-            console.log("Error: El teléfono es muy corto");
+            console.log("Error: El teléfono es muy corto");Swal.fire({
+  title: "numero invalido",
+  icon: "error",
+  draggable: true
+});
             hayErrores = true;
         }
-        
-        // Validación del correo (debe contener @)
         if (!/@/.test(correo)) {
             console.log("Error: El correo no es válido");
+            Swal.fire({
+  title: "correo invalido",
+  icon: "error",
+  draggable: true
+});
             hayErrores = true;
         }
     }
@@ -64,14 +84,5 @@ setTimeout(function() {
     window.location.href = "index.html";
 }, 2000);
          
-    }
-    if (hayErrores) {
-        console.log("datos incorrectos.");
-        Swal.fire({
-  title: "tequivocaste",
-  icon: "error",
-  draggable: true
-});
-       
     }
 }

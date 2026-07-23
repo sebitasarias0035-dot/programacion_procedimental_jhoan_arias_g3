@@ -17,26 +17,51 @@ function ValidarDatos(ventas, ingresos, egresos, valor){
 
     if(ventas=='' || ingresos==''|| valor=='' ){
         console.log("por favor rellenar los campos")
+        Swal.fire({
+  title: "rellena los campos",
+  icon: "error",
+  draggable: true
+});
         hayErrores = true;
     }
     else {
         if (/[a-zA-Z]/.test(ventas)) {
             console.log("ventas no puede contener letras");
+            Swal.fire({
+  title: "ventas no es valida",
+  icon: "error",
+  draggable: true
+});
             hayErrores = true;
         }
     }
     if (!/^\d+$/.test(ingresos)) {
         console.log("Los datos son incorrectos");
+        Swal.fire({
+  title: "ingresos invalidos",
+  icon: "error",
+  draggable: true
+});
         hayErrores = true;
     }
 
     if (egresos == "" || !/^\d+$/.test(egresos)) {
         console.log("Los datos son incorrectos");
+        Swal.fire({
+  title: "egresos invalidos",
+  icon: "error",
+  draggable: true
+});
         hayErrores = true;
     }
 
     if (valor == "" || !/^\d+$/.test(valor)) {
         console.log("Los datos son incorrectos");
+        Swal.fire({
+  title: "tequivocaste",
+  icon: "error",
+  draggable: true
+});
         hayErrores = true;
     }
     if (!hayErrores) {
@@ -51,15 +76,7 @@ setTimeout(function() {
 }, 2000);
          
     }
-     if (hayErrores) {
-        console.log("datos incorrectos.");
-        Swal.fire({
-  title: "tequivocaste",
-  icon: "error",
-  draggable: true
-});
-       
-    }
+     
 
 
 }       

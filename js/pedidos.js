@@ -16,24 +16,49 @@ function ValidarDatos(nombreusuario, producto, cantidad, pago, num){
 
     if(nombreusuario=='' || producto==''|| cantidad=='' || num=='' ){
         console.log("por favor rellenar los campos")
+        Swal.fire({
+  title: "campos vacios",
+  icon: "error",
+  draggable: true
+});
         hayErrores = true;
     }
     else {
         if (!/[a-zA-Z]/.test(nombreusuario)) {
             console.log("usuario invalido");
+            Swal.fire({
+  title: "usuario invalido",
+  icon: "error",
+  draggable: true
+});
             hayErrores = true;
         }
     }
     if (!/^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$/.test(producto)) {
             console.log('Error: El formato del nombre es incorrecto');
+            Swal.fire({
+  title: "nombre invalido",
+  icon: "error",
+  draggable: true
+});
             hayErrores = true;
         }
     if (cantidad == "" || !/^\d+$/.test(cantidad)) {
         console.log("La cantidad es incorrecta");
+        Swal.fire({
+  title: "cantidad invalida",
+  icon: "error",
+  draggable: true
+});
         hayErrores = true;
     }
-    if (num == "" || !/^\d+$/.test(num)) {
+    if (num == "" || /^\d+$/.test(num)) {
         console.log("el numero es invalido");
+        Swal.fire({
+  title: "numero invalido",
+  icon: "error",
+  draggable: true
+});
         hayErrores = true;
     }
     if (!hayErrores) {
@@ -48,14 +73,5 @@ setTimeout(function() {
 }, 2000);
          
     }
-    if (hayErrores) {
-        console.log("datos incorrectos.");
-        Swal.fire({
-  title: "tequivocaste",
-  icon: "error",
-  draggable: true
-});
-       
-    }
-
+    
 }
